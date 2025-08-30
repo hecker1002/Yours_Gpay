@@ -1,0 +1,40 @@
+
+Got the ZIP file of my Google Transactions today . 
+
+Current goal -> 
+Collect the relevant info from  this into a structured database like SQL database 
+
+
+First set up the env for my Project . ( conda create --name finance python=3.10 )
+I am using 3.10 version of python gfor versatile nature and good compatibility 
+
+
+My env is named =  finance 
+
+
+Now write the names of all the depencides that we wnat to install inside our NEw env (liek numpy pandas etc )
+and also use -e. to isntall local pkg  thatwe are gonna write using Python OOPs 
+and run it using  -> pip install -r requirements.txt 
+
+#### IMP #####
+
+( IMP if you are using -e . in  requoremnt.txt file , necessary to write a setup.py file 
+
+info -> the pkg /module you install using pip ,are stored inside apython folder on C: / site-packages 
+-> -e . ( e= editable packages   , . = HOEM DIR )
+
+since all official modules  like numpy , pandas have metadta like {version ,author ,etc } , same way when we use -e . ,
+we are saying to PIP  
+that any function /class i will be using in this project( HOME DIR ) , should be treated same as a module like numpy pandas
+and saved to site-packages folder .
+
+so in same way to give OUR /MINE official meta- data logo to these local pkg  and
+ treat it like any other official module for this or any other project in future , we use (-e .) 
+ ( to add all fucntion IN  home dir. in editable mode (with metadata)  we add this metadata info. in  SETUP.PAY file) 
+ whickh is like putting your OWN official seal on locla pkg YOU CREATE and saving it in your own env for curr/future USE 
+
+
+)
+
+
+
