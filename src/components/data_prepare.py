@@ -13,7 +13,7 @@ import zipfile , re , os
 import pandas as pd 
 
 
-zip_folder_path = "D:\This Project\Placement_2025\Mine_GPay\GTakeout.zip"
+zip_folder_path = "D:\This Project\Placement_2025\Yours_GPay\GTakeout.zip"
 files_to_extract =  ['Takeout/Google Pay/My Activity/My Activity.html']
 
 # dir of the Whole  Project 

@@ -12,7 +12,7 @@ I am using 3.10 version of python gfor versatile nature and good compatibility
 My env is named =  finance 
 
 
-Now write the names of all the depencides that we wnat to install inside our NEw env (liek numpy pandas etc )
+Now write the names of all the dependencies that we wnat to install inside our NEW  env (liek numpy pandas etc )
 and also use -e. to isntall local pkg  thatwe are gonna write using Python OOPs 
 and run it using  -> pip install -r requirements.txt 
 
@@ -38,3 +38,29 @@ so in same way to give OUR /MINE official meta- data logo to these local pkg  an
 
 
 
+Now I buuilt a web scraper (using bs4.BEuatifulSoup ) to scrap trnsactions from the Activity.html file ( form Google takeout ZIP )
+and using Regex ( using grouping -> \d to fidn single digit , \w to find single word  + (1 or multiple instances )
+*( 0 or multiple instance s, () to find such groups using regex , \s fr spaces in pattern) use re.search( pattern ,text .group(1))
+.group(1) to extract conte isndie it )
+
+### MISTAKES ###
+
+I wrote all this in my locla repo first and then using git init tried to remote add origin but failed thrice , 
+then made a enw repo first , cloned it on my lcoal , chanegd and added files , git add ,git vommit and then 
+git psuh origin main (on main branch )-> 
+
+IMP thing i observed 
+git init and git remote add origin are NOT need if we are editing a cloned repo  . 
+
+( FORM NOW ON ,i WILL FIRST MAKE REPO and then ONLY start editing it )
+
+
+
+#### PUT MORE FOCUS FROM HERE ON #### 
+
+Valdated Each column of the Datset by checking it Data types ndd DROPPIN ROWS whochwere IMPOSSINLE ( 30 Feb 2025 )
+
+and then split the Datset and save dit insdie the Artifacts folder 
+
+
+Wrote the model trianer COde 
