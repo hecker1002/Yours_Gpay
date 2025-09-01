@@ -24,4 +24,5 @@ requests
 awscli
 streamlit
 mlflow
+nltk
 -e . 
