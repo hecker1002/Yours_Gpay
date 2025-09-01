@@ -130,3 +130,6 @@ We will use mode Registry for Selecting BEst model (after saving to mlflow and  
 
 PROBLEMS --
 Mdel registry COd e( usign mlflow ) in mdoel trainer is NOT workign for NWO so leave it and the stmlit app for NOW 
+
+
+### NOW TO see CI  in action ( in github actiosn) ### 

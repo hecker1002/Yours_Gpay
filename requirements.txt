@@ -23,4 +23,5 @@ lxml
 requests
 awscli
 streamlit
+mlflow
 -e . 
