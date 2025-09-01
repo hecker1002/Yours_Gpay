@@ -133,3 +133,17 @@ Mdel registry COd e( usign mlflow ) in mdoel trainer is NOT workign for NWO so l
 
 
 ### NOW TO see CI  in action ( in github actiosn) ### 
+
+FIrst amke a .github dir / workflows dir  / ci.yaml file 
+ci.yaml (containe comamnds lie pip instlal , python fiels liek pileine to run tomake sure the proejct is ASintact as it was before )
+
+
+add chanegs t ANY file in repo (poject) -> git add . -> git commit -m "msg" --> 
+the moemt we do git push origin main/branch ---> the Actions section of github dir -> workflows 
+-> smal check itnerall done on whol project 
+ it will show the cit peipeline
+( the cmds we run usualy in cli terminal )
+wil run and check if every come is runnig corrct giving corrct artifscts and correclty conected to nect comp . 
+
+
+IMP --> USe relative apths ( NOT absolute paths ) for ci.yaml  checks 
