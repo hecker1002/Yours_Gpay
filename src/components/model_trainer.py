@@ -8,7 +8,7 @@ import mlflow
 
 from src.logger import * 
 
-train = pd.read_csv(r'D:\This Project\Placement_2025\Yours_Gpay\src\artifacts\artifacts\train_data.csv')
+train = pd.read_csv(r'src\artifacts\artifacts\train_data.csv')
 
 X_train , y_train = train.drop( "amounts ( in ₹ )" , axis =1 ) , train["amounts ( in ₹ )"]
 

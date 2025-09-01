@@ -147,3 +147,6 @@ wil run and check if every come is runnig corrct giving corrct artifscts and cor
 
 
 IMP --> USe relative apths ( NOT absolute paths ) for ci.yaml  checks 
+
+''' IMP - the ci yaml file when rusn mlflow aain (as its runniga ll fiels agian to check conssiteny'') 
+it runs ona SPEERATE  ISOLATED ubuntu env an ddoes nOT polute our own local env . 
