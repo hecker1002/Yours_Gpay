@@ -1,0 +1,22 @@
+artifact_path: file:///D:/This%20Project/Placement_2025/Yours_Gpay/src/components/mlruns/0/models/m-887705e2de21481f93e42d0765fb9053/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.3.2
+model_id: m-887705e2de21481f93e42d0765fb9053
+model_size_bytes: 22183
+model_uuid: m-887705e2de21481f93e42d0765fb9053
+prompts: null
+run_id: b8b3572efe24455ca07fa6a0f0ac52f8
+utc_time_created: '2025-09-01 16:50:02.884768'

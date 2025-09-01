@@ -21,4 +21,6 @@ imblearn
 beautifulsoup4 
 lxml 
 requests
+awscli
+streamlit
 -e . 

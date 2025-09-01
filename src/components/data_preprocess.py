@@ -53,6 +53,13 @@ import os
 train = df.loc[ : 1000 , ["ma_3" ,"ma_7" ,  "month" , "day" , "amounts ( in ₹ )"]]
 test = df.loc[ 1000: , ["ma_3" ,"ma_7" ,  "month" , "day" , "amounts ( in ₹ )"]]
 
+
+
+
+
+
+
+
 # SAVE final VALIDATED Dataset 
 base_project_dir  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 artifacts_folder = os.path.join(base_project_dir, 'artifacts')

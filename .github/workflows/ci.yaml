@@ -1,0 +1,47 @@
+
+
+# ''' a ci yaml file contian comemn that github action will runa s soon as we do git push origin main/branch ''' 
+
+# This is a basic GitHub Actions workflow for Continuous Integration.
+# It will run tests and ensure your code is in a good state.
+
+name: CI Pipeline
+
+# The 'on' keyword specifies the event that triggers the workflow.
+# In this case, it's triggered on every push to the 'main' branch.
+on:
+  push:
+    branches:
+      - main
+
+# 'jobs' defines a series of tasks to be run.
+jobs:
+  build:
+    # 'runs-on' speccifies the type of machine to run the job on.
+    runs-on: ubuntu-latest
+
+    # 'steps' is a list of commands and actions to perform.
+    steps:
+      # Step 1: Checks out your repository's code.
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Sets up a Python environment.
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9' # Use the same Python version as your local project
+
+      # Step 3: Installs your project's dependencies from requirements.txt.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # Also install your local project package in editable mode
+          pip install -e .
+
+      # Step 4: Runs a simple check on your Python code.
+      # You can replace 'your_script.py' with your actual training script.
+      - name: Run training script
+        run: |
+          python src/components/model_trainer.py

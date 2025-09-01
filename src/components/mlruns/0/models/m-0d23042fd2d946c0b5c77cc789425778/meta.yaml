@@ -1,0 +1,10 @@
+artifact_location: file:///D:/This%20Project/Placement_2025/Yours_Gpay/src/components/mlruns/0/models/m-0d23042fd2d946c0b5c77cc789425778/artifacts
+creation_timestamp: 1756745409120
+experiment_id: '0'
+last_updated_timestamp: 1756745412986
+model_id: m-0d23042fd2d946c0b5c77cc789425778
+model_type: null
+name: random_forest_reg
+source_run_id: 2138b1d0ea7642b89b982dab457588dd
+status: 2
+status_message: null

@@ -13,7 +13,8 @@ My env is named =  finance
 
 
 Now write the names of all the dependencies that we wnat to install inside our NEW  env (liek numpy pandas etc )
-and also use -e. to isntall local pkg  thatwe are gonna write using Python OOPs 
+and also use -e. to isntall local pkg  thatwe are gonna write using Py
+thon OOPs 
 and run it using  -> pip install -r requirements.txt 
 
 #### IMP #####
@@ -38,16 +39,16 @@ so in same way to give OUR /MINE official meta- data logo to these local pkg  an
 
 
 
-Now I buuilt a web scraper (using bs4.BEuatifulSoup ) to scrap trnsactions from the Activity.html file ( form Google takeout ZIP )
+Now I built a web scraper (using bs4.BeuatifulSoup ) to scrap transactions from the Activity.html file ( form Google takeout ZIP )
 and using Regex ( using grouping -> \d to fidn single digit , \w to find single word  + (1 or multiple instances )
 *( 0 or multiple instance s, () to find such groups using regex , \s fr spaces in pattern) use re.search( pattern ,text .group(1))
 .group(1) to extract conte isndie it )
 
 ### MISTAKES ###
 
-I wrote all this in my locla repo first and then using git init tried to remote add origin but failed thrice , 
-then made a enw repo first , cloned it on my lcoal , chanegd and added files , git add ,git vommit and then 
-git psuh origin main (on main branch )-> 
+I wrote all this in my local repo first and then using git init tried to remote add origin but failed thrice , 
+then made a env repo first , cloned it on my local , changed and added files , git add ,git commit and then 
+git push origin main (on main branch )-> 
 
 IMP thing i observed 
 git init and git remote add origin are NOT need if we are editing a cloned repo  . 
@@ -58,9 +59,74 @@ git init and git remote add origin are NOT need if we are editing a cloned repo 
 
 #### PUT MORE FOCUS FROM HERE ON #### 
 
-Valdated Each column of the Datset by checking it Data types ndd DROPPIN ROWS whochwere IMPOSSINLE ( 30 Feb 2025 )
+Validated Each column of the Dataset by checking it Data types and DROPPIN ROWS hwere IMPOSSIBLE dates were present ( 30 Feb 2025 )
 
-and then split the Datset and save dit insdie the Artifacts folder 
+and then split the Datset and saved it inside the Artifacts folder 
 
 
-Wrote the model trianer COde 
+Wrote the model trainer COde 
+
+
+
+## EDA ( most IMP ANALYSIS PART ) ##
+
+NAlaysed the Data depely , 
+like Date wise ,MErchant WIse trnaction , PEr day , PEer Quarter and tried to evalduate the NAture of Suer 
+
+( abse don spending aptterns at diff places ) and comapred with ratio of Fialed Tranctions 
+
+
+Now , today , I tracked the diff versiosn of mdoel using MLFLOW 
+
+in model trainer code , i added a nested lop to iterate over EACH SET of hyperparams , and 
+with mlflow.start_run() after eahc hyperp is laoded , trianed the modle calc theemtric 
+
+and usin mlflow.log_param( "hyperpam name" , hypetpa value ) 
+and mlflow.sklearn.log_mdoe( "mode" ,model ame) to log and save the model 
+
+dvc init 
+dvc add data csv file path ( moves ths file hypotheticlal from my old original lcotion to .dvc/cache folder )
+and instead of that old location file ,a NEW file.csv.dvc ( hosted ONLINE & local but acts as a pointer to this .dvc/cache file )
+
+and make git start trackign this csv.dvc (pointer file )  instead --> git add artifacts/trantion.cs.dvc --> git commit -m "dvc added" 
+
+
+### IMP in DVC #### 
+Everytime we scrap teh data or UPDATE IT ,we will NEED to add it 9jsut lie git 
+DVC INIT -> DVC ADD file.csv --> DVC COMMIT --> GIT ADD file.csv.dvc  
+
+and if by msitake we wna tto roll tback to prev bersion ,check has of prev version (in .dvc.cache)-> hash_old_ver 
+and then git checkout hash --> dvc checkout (file will updated in LCOAL to to ODER version ) 
+
+__init__.py mean --> this file can be used by ANY other file 
+
+
+### Logger .__inti__.p ### 
+
+
+Using consold Handelr and Dtream handler ,we will use logger file to protn info erro debugs etc 
+
+TO use the info /erro/bug issue from logger 
+use -> 
+from src.logger import * 
+
+logging.info( "INFO you want to show") after an operation is Dine (istea dof print )-> sie ts instea dof SIMPEL print staement 
+
+try ....   except Exception as e : logging.errro( e )  raise  ->to show  teh error (use 'raise' keywrd to STOP script after error ) 
+
+logging.debug()
+logging.warning() 
+etc 
+
+
+and once we delet mlflow it willbe deleted form mlflow UI also and in enw rusn en dir of mlflow wil be there but will NOT 
+havve OLD results 
+
+
+IMP --> MY TRAINED MODEL has been saved on MLFLOW RUNS Directly 
+
+### IMP ###
+We will use mode Registry for Selecting BEst model (after saving to mlflow and  s3 using awscli at the same time )
+
+PROBLEMS --
+Mdel registry COd e( usign mlflow ) in mdoel trainer is NOT workign for NWO so leave it and the stmlit app for NOW 
