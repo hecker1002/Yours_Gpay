@@ -1,60 +1,88 @@
-GPay Transaction Analyzer: An End-to-End MLOps Project
-Project Overview
-This project is an end-to-end MLOps pipeline designed to turn raw, unstructured financial data into a clean, actionable dataset and then deploy a machine learning model to solve a real-world problem. The core idea is to build a personalized financial assistant that learns a user's spending habits.
+# 💳 GPay Transaction Analyzer: An End-to-End MLOps Project
 
-Key Features
-Automated Data Ingestion: A robust pipeline that scrapes transaction data from local Google Takeout HTML files.
+> Turning raw Google Pay transaction data into actionable insights with a fully reproducible MLOps pipeline.
 
-Data Validation: A dedicated component that validates and cleans data, handling inconsistent formats and impossible dates.
+---
 
-MLflow Experimentation: Systematic tracking of model runs, parameters, and metrics to ensure the best model is always chosen.
+## 🚀 Project Overview
+This project demonstrates how **MLOps principles** can transform messy, unstructured financial data into a clean dataset and deploy a machine learning model to power a **personalized financial assistant**.  
 
-Data Versioning (DVC): Git-based version control for large datasets, ensuring the entire project is fully reproducible.
+The pipeline ingests raw **Google Takeout transaction data**, cleans and validates it, tracks experiments, versions datasets, and deploys a model through an interactive **Streamlit app**.
 
-Continuous Integration (CI): An automated GitHub Actions pipeline that validates the project's code on every commit.
+---
 
-Interactive Web Application: A simple Streamlit app that serves the model and provides an intuitive UI for real-time predictions.
+## ✨ Key Features
+- **Automated Data Ingestion**: Scrapes and parses transaction data from Google Takeout HTML using Beautiful Soup & regex.  
+- **Data Validation & Cleaning**: Handles inconsistent formats, missing values, and impossible dates.  
+- **Data Versioning (DVC)**: Tracks both raw and processed datasets for full reproducibility.  
+- **Experiment Tracking (MLflow)**: Logs parameters, metrics, and models for every experiment.  
+- **CI/CD with GitHub Actions**: Automated checks ensure robust, production-ready code.  
+- **Model Deployment (Streamlit)**: Interactive UI to explore predictions in real-time.  
 
-The Problem: "Smart Spending Categories"
-The core machine learning problem addressed in this project is to automatically categorize a user's spending. Most people don't manually tag their transactions. This project uses an unsupervised learning approach to group similar merchants and transactions, providing users with a clear, automatic breakdown of their spending habits without any manual input. This is a crucial first step in building a personalized financial assistant.
+---
 
-MLOps Pipeline Flow
-The project follows a structured MLOps pipeline to ensure a reproducible and professional workflow.
+## 🧩 The Problem: *Smart Spending Categories*
+Most users don’t manually tag transactions, leaving spending history messy and hard to interpret.  
+This project addresses that gap by **automatically grouping transactions** into meaningful categories using machine learning.  
 
-Data Ingestion & Cleaning: A Python script uses Beautiful Soup and regex to extract raw transaction details from a Google Takeout ZIP file. The data is then cleaned, and impossible dates are handled.
+📊 Outcome: A **clear breakdown of spending habits** with zero manual effort — a foundation for building a **personalized financial assistant**.
 
-Data Versioning (DVC): The raw and processed datasets are versioned using DVC, making the entire pipeline reproducible. Every change to the data is tracked. This keeps our Git repository lightweight while allowing us to time-travel through our data history.
+---
 
-Model Training & Experiment Tracking (MLflow): A RandomForestRegressor is trained to predict transaction amounts. MLflow tracks every experiment, logging hyperparameters (n_estimators, max_depth) and metrics (r2_score).
+## 🔄 MLOps Pipeline Flow
+1. **Data Ingestion & Cleaning**  
+   - Extracts raw data from Google Takeout `.zip`  
+   - Cleans records, normalizes fields, fixes invalid dates  
 
-Model Registry: The best-performing model from the experiments is registered in the MLflow Model Registry and promoted to the Production stage for easy deployment.
+2. **Data Versioning (DVC)**  
+   - Ensures lightweight Git repo while tracking large datasets  
+   - Enables “time-travel” through dataset versions  
 
-CI/CD (GitHub Actions): A ci.yml file configures a GitHub Actions workflow that automatically runs the entire training pipeline on every code push, ensuring code and model integrity.
+3. **Model Training & Tracking (MLflow)**  
+   - Trains a `RandomForestRegressor` to predict transaction amounts  
+   - Tracks hyperparameters (`n_estimators`, `max_depth`) and metrics (`R²`)  
 
-Model Deployment (Streamlit): A Streamlit app loads the "Production" model from the MLflow Registry and provides an intuitive UI for real-time predictions and analysis.
+4. **Model Registry**  
+   - Best-performing model promoted to **Production** in MLflow Registry  
 
-Technologies Used
-Data Ingestion & Cleaning: Python, Beautiful Soup, Pandas, regex
+5. **CI/CD (GitHub Actions)**  
+   - Automates testing and pipeline execution on every commit  
 
-MLOps Frameworks: MLflow, DVC
+6. **Deployment (Streamlit App)**  
+   - Loads the **Production model**  
+   - Provides a clean UI for real-time predictions and analysis  
 
-ML Libraries: scikit-learn
+---
 
-Visualization: Matplotlib, Streamlit
+## 🛠️ Tech Stack
+- **Data Ingestion & Cleaning**: Python, Beautiful Soup, Pandas, Regex  
+- **MLOps Tools**: MLflow, DVC  
+- **Machine Learning**: scikit-learn  
+- **Visualization & Deployment**: Matplotlib, Streamlit  
+- **Automation**: GitHub Actions  
+- **Version Control**: Git & GitHub  
 
-Automation: GitHub Actions
+---
 
-Version Control: Git
+## ⚡ Getting Started
+Follow these steps to reproduce the project locally:
 
-How to Reproduce this Project
-Clone the repository: git clone <your-repo-url>
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
+cd gpay-transaction-analyzer
 
-Install dependencies: pip install -r requirements.txt
+# 2. Install dependencies
+pip install -r requirements.txt
 
-Set up DVC: dvc pull to retrieve the data artifacts.
+# 3. Pull versioned data
+dvc pull
 
-Run the MLflow tracking server: mlflow ui
+# 4. Run MLflow tracking server
+mlflow ui
 
-Run the training pipeline: python src/components/model_trainer.py
+# 5. Train the model
+python src/components/model_trainer.py
 
-Launch the Streamlit app: streamlit run app.py
+# 6. Launch the Streamlit app
+streamlit run app.py
