@@ -69,7 +69,7 @@ Follow these steps to reproduce the project locally:
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/hecker1002/Yours_Gpay.git
 cd gpay-transaction-analyzer
 
 # 2. Install dependencies
